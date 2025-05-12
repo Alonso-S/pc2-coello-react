@@ -1,19 +1,20 @@
-"use client"
+"use client";
 
-import { useContext } from "react"
-import { Link } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext"
-import styles from "./Dashboard.module.css"
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import styles from "./Dashboard.module.css";
 
 const Dashboard = () => {
-  const { currentUser, isAdmin } = useContext(AuthContext)
+  const { currentUser, isAdmin } = useContext(AuthContext);
 
   return (
     <div className={styles.dashboardContainer}>
       <div className={styles.welcomeSection}>
         <h1 className={styles.welcomeTitle}>Panel de Control</h1>
         <p className={styles.welcomeText}>
-          Bienvenido al sistema de gestión farmacéutica, <span className={styles.userName}>{currentUser?.email}</span>
+          Bienvenido al sistema de gestión farmacéutica,{" "}
+          <span className={styles.userName}>{currentUser?.email}</span>
         </p>
       </div>
 
@@ -22,7 +23,9 @@ const Dashboard = () => {
           <div className={styles.statIcon}>📊</div>
           <div className={styles.statInfo}>
             <h3 className={styles.statTitle}>Inventario</h3>
-            <p className={styles.statDescription}>Gestiona el inventario de medicamentos</p>
+            <p className={styles.statDescription}>
+              Gestiona el inventario de medicamentos
+            </p>
           </div>
         </div>
 
@@ -31,18 +34,12 @@ const Dashboard = () => {
             <div className={styles.statIcon}>👥</div>
             <div className={styles.statInfo}>
               <h3 className={styles.statTitle}>Usuarios</h3>
-              <p className={styles.statDescription}>Administra los usuarios del sistema</p>
+              <p className={styles.statDescription}>
+                Administra los usuarios del sistema
+              </p>
             </div>
           </div>
         )}
-
-        <div className={styles.statCard}>
-          <div className={styles.statIcon}>📝</div>
-          <div className={styles.statInfo}>
-            <h3 className={styles.statTitle}>Reportes</h3>
-            <p className={styles.statDescription}>Visualiza reportes y estadísticas</p>
-          </div>
-        </div>
       </div>
 
       <div className={styles.actionsSection}>
@@ -51,20 +48,34 @@ const Dashboard = () => {
           <Link to="/medicamentos" className={styles.actionCard}>
             <div className={styles.actionIcon}>🔍</div>
             <h3 className={styles.actionTitle}>Ver Inventario</h3>
-            <p className={styles.actionDescription}>Consulta el inventario actual de medicamentos</p>
+            <p className={styles.actionDescription}>
+              Consulta el inventario actual de medicamentos
+            </p>
+          </Link>
+
+          <Link to="/ordenes" className={styles.actionCard}>
+            <div className={styles.actionIcon}>📦</div>
+            <h3 className={styles.actionTitle}>Órdenes de Compra</h3>
+            <p className={styles.actionDescription}>
+              {isAdmin()
+                ? "Administra las órdenes de compra"
+                : "Consulta tus órdenes registradas"}
+            </p>
           </Link>
 
           {isAdmin() && (
             <Link to="/usuarios" className={styles.actionCard}>
               <div className={styles.actionIcon}>👤</div>
               <h3 className={styles.actionTitle}>Gestionar Usuarios</h3>
-              <p className={styles.actionDescription}>Administra los usuarios del sistema</p>
+              <p className={styles.actionDescription}>
+                Administra los usuarios del sistema
+              </p>
             </Link>
           )}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

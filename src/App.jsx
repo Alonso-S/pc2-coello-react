@@ -1,14 +1,15 @@
-import { Routes, Route, Navigate } from "react-router-dom"
-import LoginPage from "./pages/LoginPage"
-import RegisterPage from "./pages/RegisterPage"
-import Dashboard from "./pages/Dashboard"
-import MedicamentosPage from "./pages/MedicamentosPage"
-import UsuariosPage from "./pages/UsuariosPage"
-import Navbar from "./components/Navbar"
-import { AuthProvider } from "./context/AuthContext"
-import ProtectedRoute from "./components/ProtectedRoute"
-import AdminRoute from "./components/AdminRoute"
-import styles from "./App.module.css"
+import { Navigate, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import Dashboard from "./pages/Dashboard";
+import MedicamentosPage from "./pages/MedicamentosPage";
+import UsuariosPage from "./pages/UsuariosPage";
+import Navbar from "./components/Navbar";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminRoute from "./components/AdminRoute";
+import styles from "./App.module.css";
+import OrdenesCompraPage from "./pages/OrdenesCompraPage";
 
 function App() {
   return (
@@ -36,6 +37,15 @@ function App() {
               }
             />
             <Route
+              path="/ordenes"
+              element={
+                <ProtectedRoute>
+                  <OrdenesCompraPage />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
               path="/usuarios"
               element={
                 <AdminRoute>
@@ -51,7 +61,7 @@ function App() {
         </footer>
       </div>
     </AuthProvider>
-  )
+  );
 }
 
-export default App
+export default App;
