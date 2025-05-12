@@ -1,0 +1,133 @@
+.authPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 150px);
+  padding: 2rem 1rem;
+}
+
+.authFormContainer {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+}
+
+.authHeader {
+  background-color: #ebf4ff;
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #bee3f8;
+}
+
+.authTitle {
+  color: #2c5282;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.authSubtitle {
+  color: #4a5568;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.authForm {
+  padding: 1.5rem;
+}
+
+.formField {
+  margin-bottom: 1.25rem;
+}
+
+.formLabel {
+  display: block;
+  color: #4a5568;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: #4a5568;
+  transition: border-color 0.2s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #5a67d8;
+  box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.1);
+}
+
+.formInput::placeholder {
+  color: #a0aec0;
+}
+
+.inputError {
+  border-color: #e53e3e;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.errorText {
+  color: #e53e3e;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.errorAlert {
+  background-color: #fff5f5;
+  color: #c53030;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  margin: 0 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  border-left: 4px solid #e53e3e;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #5a67d8;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submitButton:hover {
+  background-color: #4c51bf;
+}
+
+.authFooter {
+  padding: 1rem 1.5rem;
+  background-color: #f7fafc;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+.authLink {
+  color: #5a67d8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.authLink:hover {
+  text-decoration: underline;
+}
